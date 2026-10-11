@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Join Analysis With Rishabh on Telegram for educational analysis and community discussions.">
+  <title>ANALYSIS WITH RISHABH | Telegram</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue: #278bff;
+      --cyan: #32e6ff;
+      --bg: #07111f;
+      --text: #f5f8ff;
+      --muted: #a7b6cc;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    /* Animated background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -50%;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 30% 30%,
+          rgba(39,139,255,.22), transparent 35%),
+        radial-gradient(circle at 75% 65%,
+          rgba(50,230,255,.13), transparent 35%),
+        linear-gradient(135deg, #07111f, #10152e, #061522);
+      background-size: 180% 180%;
+      animation: backgroundMove 12s ease-in-out infinite alternate;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 35px 35px;
+    }
+
+    @keyframes backgroundMove {
+      from { transform: translate(-2%, -1%); }
+      to { transform: translate(2%, 1%); }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 780px;
+      margin: auto;
+      padding: 24px 18px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 35px;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      text-align: center;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 25px 18px 35px;
+      border: 1px solid rgba(104,174,255,.22);
+      border-radius: 28px;
+      background: rgba(13, 27, 48, .78);
+      box-shadow: 0 20px 70px rgba(0,0,0,.28);
+      backdrop-filter: blur(12px);
+      animation: appear .8s ease both;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 24px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #123a71, #087cba);
+      border: 2px solid rgba(90,220,255,.8);
+      box-shadow: 0 0 32px rgba(39,139,255,.28);
+    }
+
+    .logo span {
+      font-size: 37px;
+      font-weight: 900;
+      letter-spacing: -3px;
+      color: white;
+      text-shadow: 0 0 18px rgba(50,230,255,.65);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 13px;
+      border-radius: 30px;
+      border: 1px solid rgba(50,230,255,.3);
+      color: var(--cyan);
+      background: rgba(50,230,255,.07);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 7vw, 48px);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -1.3px;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 5px;
+      background: linear-gradient(90deg, #55aaff, #48f0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .description {
+      max-width: 470px;
+      margin: 0 auto 27px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .join-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 390px;
+      min-height: 62px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      overflow: hidden;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: .7px;
+      border-radius: 15px;
+      background: linear-gradient(100deg, #1688ff, #0860df, #1688ff);
+      background-size: 200% 100%;
+      box-shadow: 0 9px 30px rgba(0,117,255,.3);
+      animation: buttonGlow 2.4s ease-in-out infinite,
+                 buttonColor 4s linear infinite;
+      transition: transform .2s ease;
+    }
+
+    .join-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .join-btn:active {
+      transform: scale(.97);
+    }
+
+    .join-btn svg {
+      width: 25px;
+      height: 25px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    @keyframes buttonGlow {
+      0%, 100% {
+        box-shadow: 0 0 12px rgba(0,117,255,.2),
+                    0 9px 25px rgba(0,117,255,.25);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(50,230,255,.45),
+                    0 9px 35px rgba(0,117,255,.35);
+      }
+    }
+
+    @keyframes buttonColor {
+      to { background-position: 200% 0; }
+    }
+
+    .secure-note {
+      color: #90a4be;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 22px 0;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 19px 8px;
+      border-radius: 17px;
+      background: rgba(17,34,57,.8);
+      border: 1px solid rgba(115,170,235,.14);
+    }
+
+    .feature-icon {
+      width: 43px;
+      height: 43px;
+      margin: 0 auto 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 13px;
+      background: rgba(39,139,255,.13);
+      font-size: 21px;
+    }
+
+    .feature h3 {
+      font-size: 12px;
+      margin-bottom: 7px;
+      color: #f1f6ff;
+    }
+
+    .feature p {
+      font-size: 11px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .about {
+      padding: 23px;
+      border: 1px solid rgba(115,170,235,.15);
+      border-radius: 20px;
+      background: rgba(13,27,48,.76);
+      margin-bottom: 20px;
+    }
+
+    .about h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .about p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .disclaimer {
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,190,70,.25);
+      background: rgba(255,170,30,.055);
+    }
+
+    .disclaimer h2 {
+      color: #ffcc75;
+      font-size: 14px;
+      margin-bottom: 12px;
+      letter-spacing: .3px;
+    }
+
+    .age {
+      display: inline-block;
+      border: 1px solid rgba(255,190,70,.45);
+      color: #ffcc75;
+      border-radius: 5px;
+      padding: 3px 7px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-right: 6px;
+    }
+
+    .disclaimer p {
+      color: #c1c9d6;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    footer {
+      padding: 24px 8px 10px;
+      text-align: center;
+      color: #778ba6;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px 13px;
+      }
+
+      .topbar {
+        margin-bottom: 22px;
+      }
+
+      .hero {
+        padding: 27px 15px 28px;
+        border-radius: 23px;
+      }
+
+      .logo {
+        width: 94px;
+        height: 94px;
+        border-radius: 24px;
+      }
+
+      .logo span {
+        font-size: 32px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .features {
+        gap: 8px;
+      }
+
+      .feature {
+        padding: 15px 5px;
+      }
+
+      .feature h3 {
+        font-size: 11px;
+      }
+
+      .feature p {
+        font-size: 10px;
+      }
+
+      .about, .disclaimer {
+        padding: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <header class="topbar">
+      <div class="brand">RISHABH COMMUNITY</div>
+    </header>
+
+    <section class="hero">
+
+      <div class="logo" aria-label="Analysis With Rishabh logo">
+        <span>R<span style="color:#55eaff">X</span></span>
+      </div>
+
+      <div class="eyebrow">TELEGRAM COMMUNITY</div>
+
+      <h1>
+        ANALYSIS WITH
+        <span>RISHABH</span>
+      </h1>
+
+      <p class="description">
+        Welcome to our Telegram community! Join us for analysis,
+        educational insights and community discussions in one place.
+      </p>
+
+      <a
+        class="join-btn"
+        href="https://t.me/+aB5UN_QD3ZIxZjNl"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Join Analysis With Rishabh on Telegram"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12
+          12-5.373 12-12S18.627 0 12 0zm5.894 8.213-1.98
+          9.33c-.146.662-.537.822-1.087.512l-3.003-2.213
+          -1.449 1.396c-.16.16-.294.294-.603.294l.214-3.056
+          5.563-5.024c.242-.214-.053-.334-.375-.12l-6.878
+          4.33-2.963-.926c-.644-.202-.656-.644.134-.953
+          l11.58-4.464c.536-.194 1.004.131.83.894z"/>
+        </svg>
+        JOIN TELEGRAM CHANNEL
+      </a>
+
+      <p class="secure-note">
+        Connect with our community on Telegram
+      </p>
+
+    </section>
+
+    <section class="features" aria-label="Community highlights">
+
+      <article class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Analysis</h3>
+        <p>Analysis and informational insights</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">📚</div>
+        <h3>Education</h3>
+        <p>Learn through shared information</p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">👥</div>
+        <h3>Community</h3>
+        <p>Community interaction and discussion</p>
+      </article>
+
+    </section>
+
+    <section class="about">
+      <h2>About Our Channel</h2>
+      <p>
+        ANALYSIS WITH RISHABH is a Telegram community for
+        informational content, educational analysis and community
+        discussions. Explore the content, participate responsibly
+        and make your own informed decisions.
+      </p>
+    </section>
+
+    <section class="disclaimer">
+      <h2><span class="age">18+</span> DISCLAIMER</h2>
+      <p>
+        This page is for 18+ entertainment purposes only. We do not
+        promote any real money gambling. All content shared is for
+        educational and community discussion only. No guaranteed
+        income or profit. Please participate responsibly.
+      </p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> ANALYSIS WITH RISHABH</p>
+      <p>For educational and community discussion only.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
